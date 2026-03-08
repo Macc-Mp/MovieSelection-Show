@@ -1,0 +1,48 @@
+.ownerTag {
+    border-radius: 15px;
+ 
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    min-width: 150px; /* Prevents shrinking too much */
+}
+
+/* Container setup for centering */
+.ContainerOwner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Tablet screens (max-width: 768px) */
+@media (max-width: 768px) {
+    .ownerTag {
+        width: 80%; /* Make it more scalable */
+        font-size: 1rem; /* Reduce font size */
+        padding: 15px;
+    }
+
+    .ContainerOwner {
+        height: auto; /* Prevent fixed height */
+        padding: 20px;
+    }
+}
+
+/* Mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .ownerTag {
+        width: 90%;
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .ContainerOwner {
+        height: auto;
+        padding: 10px;
+    }
+}
