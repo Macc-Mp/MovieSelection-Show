@@ -1,193 +1,134 @@
-
-.posterClass{
-    width: 100%;
-    height: auto;
-    max-width: 320px;
-    max-height: 80vh;
-    background-color: black;
-    padding: 8px;
-    border-radius: 6px;
+/* Base Layout */
+.movie-details {
+  padding: 2rem 5%;
+  color: white;
+  min-height: 100vh;
+  background-color: #111;
 }
 
-h2, h1{
-    color: #000000;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
 .back-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: black;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
+  margin-bottom: 20px;
+  padding: 8px 24px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .back-button:hover {
-    background-color: #0056b3;
+  background: #e50914;
+  border-color: #e50914;
 }
 
-.rating-bar {
-    width: 100%;
-    height: 20px;
-    background-color: #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 15px;
-}
-
-.fill {
-    height: 100%;
-    background: linear-gradient(rgb(0, 0, 0), rgb(36, 37, 33));
-    transition: width 0.3s ease-in-out;
-}
-
-/* Responsive Design */
-
-@media screen and (max-width: 768px) { /* Applies to tablets & phones */
-    .posterClass {
-        width: 80%; /* Make poster larger on small screens */
-        height: auto; /* Prevent fixed height issues */
-    }
-
-    .rating-bar {
-        width: 80%; /* Expand rating bar */
-        height: 15px; /* Slightly reduce bar height */
-    }
-
-    .back-button {
-        width: 100%; /* Full-width button for easier tap */
-        font-size: 14px; /* Slightly smaller font */
-        padding: 12px; /* Adjust spacing */
-    }
-}
-
-@media screen and (max-width: 480px) { /* Applies to small phones */
-    .posterClass {
-        width: 100%; /* Full width for small screens */
-    }
-
-    .rating-bar {
-        width: 100%;
-        height: 10px;
-    }
-
-    h2, h1 {
-        font-size: 18px; /* Reduce text size */
-    }
-
-    .back-button {
-        font-size: 12px;
-    }
-}
-
-/* Layout: left poster and right details inline */
+/* Details Row */
 .details-row {
-    display: flex;
-    gap: 24px;
-    align-items: flex-start;
-    margin-top: 18px;
+  display: flex;
+  gap: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
 }
 
 .leftCard {
-    flex: 0 0 320px;
-    max-width: 320px;
+  flex: 0 0 300px;
 }
 
-.poster-wrapper {
-    position: relative;
-    width: 100%;
-}
-
-.poster-loader {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 5;
+.posterClass {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 .movie-title {
-    font-size: 1.6rem;
-    margin: 0 0 8px 0;
-    max-width: 320px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow:ellipsis;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: white;
 }
 
-.rightCard {
-    flex: 1 1 0;
+/* Rating Bar */
+.rating-section {
+  margin: 1.5rem 0;
 }
 
-@media screen and (max-width: 768px) {
-    .details-row {
-        flex-direction: column;
-        gap: 12px;
-    }
-    .posterClass { max-width: 100%; }
-    .leftCard { flex: none; max-width: 100%; }
-    .movie-title { white-space: normal; }
+.rating-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #333;
+  border-radius: 10px;
+  margin-top: 8px;
 }
 
-/* Bottom discussion card (placed after details) */
+.fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff4757, #ff6b81);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+}
+
+/* Text Content */
+h2 {
+  color: #e50914; /* Cinematic red for headings */
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 1.5rem;
+}
+
+.rightCard p {
+  line-height: 1.6;
+  color: #ccc;
+  font-size: 1.05rem;
+}
+
+/* TMDb Reviews Section */
 .discussion-card {
-    margin-top: 28px;
-    padding: 16px;
-    border-radius: 8px;
-    background: #f8f8f8;
-    border: 1px solid #e0e0e0;
-}
-
-.discussion-card h3 {
-    margin: 0 0 10px 0;
-    text-align: justify;
+  margin-top: 40px;
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid #333;
 }
 
 .messages {
-    max-height: 220px;
-    overflow: auto;
-    padding: 8px;
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: 6px;
-    text-align: justify;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 20px;
 }
 
 .message {
-    padding: 6px 8px;
-    border-bottom: 1px solid #f1f1f1;
+  background: #252525;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border-left: 4px solid #e50914;
 }
 
-.message:last-child { border-bottom: none; }
-.author { color: #333; }
-.text { color: #111; }
-
-.message-form {
-    display: flex;
-    gap: 8px;
-    margin-top: 10px;
+.author {
+  display: block;
+  color: #fff;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  text-transform: bold;
 }
 
-.message-input {
-    flex: 1 1 auto;
-    padding: 8px 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+.text {
+  color: #bbb;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 
-.message-send {
-    padding: 8px 12px;
-    border-radius: 6px;
-    border: none;
-    background: #222;
-    color: #fff;
-    cursor: pointer;
-}
-
-.message-send:hover { background: #444; }
-
-@media screen and (max-width: 480px) {
-    .messages { max-height: 160px; }
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .details-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .movie-title { font-size: 1.8rem; }
 }

@@ -1,48 +1,105 @@
+.about-page {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #111;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+.about-container {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 60px;
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
 .ownerTag {
-    border-radius: 15px;
- 
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: fit-content;
-    min-width: 150px; /* Prevents shrinking too much */
+  width: 120px;
+  height: 120px;
+  border-radius: 50%; /* Circular logo looks more professional */
+  object-fit: cover;
+  border: 3px solid #ff4757;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(255, 71, 87, 0.3);
 }
 
-/* Container setup for centering */
-.ContainerOwner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
+.about-content h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
-/* Tablet screens (max-width: 768px) */
+.about-content h1 span {
+  color: #ff4757;
+  display: block;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 5px;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+/* Tech Badges */
+.tech-stack {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ff4757;
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  text-align: left;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 30px;
+}
+
+.info-item h3 {
+  color: white;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.info-item p {
+  color: #888;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-    .ownerTag {
-        width: 80%; /* Make it more scalable */
-        font-size: 1rem; /* Reduce font size */
-        padding: 15px;
-    }
-
-    .ContainerOwner {
-        height: auto; /* Prevent fixed height */
-        padding: 20px;
-    }
-}
-
-/* Mobile screens (max-width: 480px) */
-@media (max-width: 480px) {
-    .ownerTag {
-        width: 90%;
-        font-size: 0.9rem;
-        padding: 10px;
-    }
-
-    .ContainerOwner {
-        height: auto;
-        padding: 10px;
-    }
+  .about-container { padding: 40px 20px; }
+  .info-grid { grid-template-columns: 1fr; }
+  .about-content h1 { font-size: 1.8rem; }
 }
