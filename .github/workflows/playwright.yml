@@ -13,17 +13,22 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
-    - name: Install dependencies
+
+    # 1. Install dependencies at the ROOT (where your playwright.config.js is)
+    - name: Install root dependencies
+      run: npm install
+
+    # 2. Install dependencies inside the frontend (where your Vite app is)
+    - name: Install frontend dependencies
       run: npm ci --prefix frontend
-
+      
+    # 3. Install Playwright browsers (now perfectly natively at the root)
     - name: Install Playwright Browsers
-      run: |
-        cd frontend
-        npx playwright install --with-deps
+      run: npx playwright install --with-deps
 
+    # 4. Run Playwright tests smoothly from the root
     - name: Run Playwright tests
-      # 💡 Change into frontend so Node finds the package, but point back to the root config file
-      run: cd frontend && npx playwright test --config=../playwright.config.js --reporter=html
+      run: npx playwright test --reporter=html
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
