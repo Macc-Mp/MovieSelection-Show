@@ -1,0 +1,23 @@
+{
+  "name": "movieselection-show",
+  "version": "1.0.0",
+  "description": "Browse critic reviews for movies. includes ratings and pagination. Api Key from Themoviedb.org \r # Frontend\r ###\r <div align=\"left\">\r   <img src=\"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg\" height=\"30\" alt=\"react logo\"  />\r </div>",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Macc-Mp/MovieSelection-Show.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Macc-Mp/MovieSelection-Show/issues"
+  },
+  "homepage": "https://github.com/Macc-Mp/MovieSelection-Show#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.1.1"
+  }
+}
