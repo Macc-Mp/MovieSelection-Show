@@ -19,3 +19,9 @@ Browse critic reviews for movies. includes ratings and pagination. Api Key from 
 - 📱 **Responsive** - Works on all devices
 
   
+## QA Gui
+cd frontend
+npm init playwright@latest\
+Pick Js, choose tests and the remaining true
+- npx playwright test
+
