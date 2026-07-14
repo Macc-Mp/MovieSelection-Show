@@ -22,6 +22,9 @@ jobs:
         npx playwright install --with-deps
 
     - name: Run Playwright tests
+      # 💡 This tells Node to check the frontend's node_modules for the package!
+      env:
+        NODE_PATH: ./frontend/node_modules
       run: npx playwright test --reporter=html
 
     - uses: actions/upload-artifact@v4
