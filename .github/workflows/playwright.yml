@@ -22,7 +22,9 @@ jobs:
         npx playwright install --with-deps
 
     - name: Run Playwright tests
-      run: npx playwright test --reporter=html --prefix frontend
+      run: |
+        cd frontend
+        npx playwright test --reporter=html
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
