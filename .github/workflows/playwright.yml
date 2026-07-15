@@ -53,5 +53,8 @@ jobs:
       if: ${{ !cancelled() }}
       with:
         name: lighthouse-report
-        path: ./.lighthouseci/   # Grabs the folder we configured in lighthouserc.json
+        # 💡 This path tells GitHub to look in the local folder OR the system's temporary directory where the action saves results
+        path: |
+          .lighthouseci/
+          **/lhci_reports/
         retention-days: 30
