@@ -21,6 +21,16 @@ jobs:
     # 2. Install dependencies inside the frontend (where your Vite app is)
     - name: Install frontend dependencies
       run: npm ci --prefix frontend
+
+    #2.5 Lighthouse
+    - name: Run Lighthouse Audits
+      uses: treosh/lighthouse-ci-action@v12
+      with:
+        configPath: './lighthouserc.json'
+        uploadArtifacts: true
+        env:
+        # 💡 This injects the automatic GitHub token to clear the warning!
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
     # 3. Install Playwright browsers (now perfectly natively at the root)
     - name: Install Playwright Browsers

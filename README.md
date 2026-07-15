@@ -25,3 +25,6 @@ npm init playwright@latest\
 Pick Js, choose tests and the remaining true
 - npx playwright test
 
+## Add Lighthouse (On root)
+npm install -g @lhci/cli
+lhci autorun
