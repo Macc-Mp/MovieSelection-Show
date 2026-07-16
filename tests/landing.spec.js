@@ -23,3 +23,16 @@ test('get started link', async ({ page }) => {
   // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: /See reviews of the latest movies and TV shows./i })).toBeVisible();
 });
+
+test('Visual Regression - Landing Page', async ({ page }) => {
+  await page.goto('/'); // Navigates to your base URL
+  
+  // Wait for the page to be fully stable
+  await page.waitForLoadState('networkidle'); 
+  
+  // Asserts the visual output of the page against a saved "golden" image
+  await expect(page).toHaveScreenshot('landing-page.png', {
+    fullPage: true,
+    animations: 'disabled', // Suppresses CSS animations to prevent flaky diffs
+  });
+});

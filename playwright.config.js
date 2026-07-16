@@ -1,6 +1,17 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
 
+module.exports = defineConfig({
+  expect: {
+    toHaveScreenshot: {
+      // Allows up to 2% of pixels to differ before failing (reduces CI flakiness)
+      maxDiffPixelRatio: 0.02, 
+    },
+  },
+  // Automatically generate snapshots if they are missing on CI
+  updateSnapshots: process.env.CI ? 'missing' : 'none', 
+});
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -70,6 +81,8 @@ export default defineConfig({
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
   ],
+
+  
 
   /* Run your local dev server before starting the tests */
   webServer: {
